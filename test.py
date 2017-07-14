@@ -226,3 +226,65 @@ def normalizeRows(x):
 
     return x
 
+
+# In[27]:
+
+x = np.array([
+    [0, 3, 4],
+    [1, 6, 4]])
+print("normalizeRows(x) = " + str(normalizeRows(x)))
+
+
+# **Expected Output**:
+#
+# <table style="width:60%">
+#
+#      <tr>
+#        <td> **normalizeRows(x)** </td>
+#        <td> [[ 0.          0.6         0.8       ]
+#  [ 0.13736056  0.82416338  0.54944226]]</td>
+#      </tr>
+#
+#
+# </table>
+def softmax(x):
+    """Calculates the softmax for each row of the input x.
+    Argument:
+    x -- A numpy matrix of shape (n,m)
+    Returns:
+    s -- A numpy matrix equal to the softmax of x, of shape (n,m)
+    """
+
+    ### START CODE HERE ### (≈ 3 lines of code)
+    # Apply exp() element-wise to x. Use np.exp(...).
+    x_exp = np.exp(x)
+
+    # Create a vector x_sum that sums each row of x_exp. Use np.sum(..., axis = 1, keepdims = True).
+    x_sum = np.sum(x_exp, axis=1, keepdims=True)
+
+    # Compute softmax(x) by dividing x_exp by x_sum. It should automatically use numpy broadcasting.
+    s = x_exp / x_sum
+
+    ### END CODE HERE ###
+
+    return s
+
+
+x = np.array([
+    [9, 2, 5, 0, 0],
+    [7, 5, 0, 0, 0]])
+print("softmax(x) = " + str(softmax(x)))
+
+# **Expected Output**:
+#
+# <table style="width:60%">
+#
+#      <tr>
+#        <td> **softmax(x)** </td>
+#        <td> [[  9.80897665e-01   8.94462891e-04   1.79657674e-02   1.21052389e-04
+#     1.21052389e-04]
+#  [  8.78679856e-01   1.18916387e-01   8.01252314e-04   8.01252314e-04
+#     8.01252314e-04]]</td>
+#      </tr>
+# </table>
+#
