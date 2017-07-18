@@ -360,3 +360,21 @@ toc = time.process_time()
 print("gdot = " + str(dot) + "\n ----- Computation time = " + str(1000 * (toc - tic)) + "ms")
 
 
+def L1(yhat, y):
+    """
+    Arguments:
+    yhat -- vector of size m (predicted labels)
+    y -- vector of size m (true labels)
+
+    Returns:
+    loss -- the value of the L1 loss function defined above
+    """
+
+    ### START CODE HERE ### (≈ 1 line of code)
+    loss = np.sum(np.abs(yhat - y), axis=0)
+    ### END CODE HERE ###
+
+    return loss
+
+
+# In[42]:
