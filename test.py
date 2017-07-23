@@ -416,3 +416,16 @@ def L2(yhat, y):
 yhat = np.array([.9, 0.2, 0.1, .4, .9])
 y = np.array([1, 0, 0, 1, 1])
 print("L2 = " + str(L2(yhat, y)))
+
+# In[45]:
+
+# GRADED FUNCTION: L2
+
+
+# **Expected Output**:
+# <table style="width:20%">
+#      <tr>
+#        <td> **L2** </td>
+#        <td> 0.43 </td>
+#      </tr>
+# </table>
